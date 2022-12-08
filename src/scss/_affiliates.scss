@@ -1,0 +1,57 @@
+@use "globals" as *;
+
+.affiliates-mother {
+    .affiliate {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .img-mother {
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .people {
+            .person {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+}
+
+@media all and (min-width: $smlWidth) {
+    .affiliates-mother {
+        .affiliate {
+            .people {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+    
+                .person {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: $medWidth) {
+    .affiliates-mother {
+        .affiliate {
+            .people {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}

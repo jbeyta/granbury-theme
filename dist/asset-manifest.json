@@ -1,0 +1,14 @@
+{
+  "admin.js": "admin.js",
+  "admin.css": "css/admin.css",
+  "admin.js.map": "admin.js.map",
+  "admin.css.map": "css/admin.css.map",
+  "main.js": "main.js",
+  "main.css": "css/main.css",
+  "main.js.map": "main.js.map",
+  "main.css.map": "css/main.css.map",
+  "outdated-browser-rework.js": "outdated-browser-rework.js",
+  "outdated-browser-rework.js.map": "outdated-browser-rework.js.map",
+  "respimgblock.js": "respimgblock.js",
+  "respimgblock.js.map": "respimgblock.js.map"
+}

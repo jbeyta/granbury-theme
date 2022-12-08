@@ -1,0 +1,37 @@
+$red: #e40303;
+$orange: #ff8c00;
+$yellow: #ffed00;
+$green: #008026;
+$purple: #750787;
+$lightBlue: #61c9d8;
+$pink: #ff80e0;
+$brown: #613000;
+$gray: #666;
+$black: #000;
+$white: #fff;
+
+$dkGrey: #343538;
+$tan: #bd8c7d;
+$blue: #3F6270;
+
+$linkColor: $tan;
+$linkHover: lighten($linkColor, 10%);
+$fontColor: $dkGrey;
+
+// :root {
+//     --cw-font-color: #{$fontColor};
+//     --cw-link-color: #{$linkColor};
+//     --cw-link-hover: #{$linkHover};
+//     --cw-red-color: #{$red};
+//     --cw-orange-color: #{$orange};
+//     --cw-yellow-color: #{$yellow};
+//     --cw-green-color: #{$green};
+//     --cw-blue-color: #{$blue};
+//     --cw-purple-color: #{$purple};
+//     --cw-lightblue-color: #{$lightBlue};
+//     --cw-pink-color: #{$pink};
+//     --cw-brown-color: #{$brown};
+//     --cw-gray-color: #{$gray};
+//     --cw-black-color: #{$black};
+//     --cw-white-color: #{$white};
+// }

@@ -1,0 +1,285 @@
+@use "globals" as *;
+
+.menu-toggle {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	display: block;
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	background: linear-gradient(45deg, lighten(#000, 20%), #000);
+	border-radius: 40px;
+	z-index: 99999;
+
+	.open,
+	.close {
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		svg {
+			display: block;
+		}
+	}
+
+	.open {
+		transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+		transition: .3s;
+	}
+
+	.close {
+		transform: translateX(-50%) translateY(-50%) scale(.5);
+		opacity: 0;
+		transition: .3s;
+	}
+
+	.mobile-nav-open & {
+		.open {
+			opacity: 0;
+			transform: translateX(-50%) translateY(-50%) scale(.5);
+			transition: .3s;
+		}
+
+		.close {
+			opacity: 1;
+			transform: translateX(-50%) translateY(-50%) scale(1);
+			transition: .3s;
+		}
+	}
+}
+
+// header and nav
+[role="banner"] {
+	position: relative;
+	z-index: 10;
+	background: linear-gradient(to right, lighten($dkGrey, 50%), $dkGrey);
+
+	// nav
+	.mobile-nav-open & {
+		.cw-nav-cont {
+			[role="navigation"] {
+				.menu {
+					visibility: visible;
+					opacity: 1;
+					z-index: 9999;
+					transition: visibility 0s 0s, opacity .5s 0s, z-index 0s 0s;
+				}
+			}
+		}
+	}
+
+	.cw-nav-cont {
+		&.down {
+			margin-bottom: 100px;
+
+			.logo {
+				width: 125px;
+				transition: width .3s;
+			}
+		}
+
+		.logo {
+			position: relative;
+			padding: 15px 0;
+			width: 100%;
+			transition: width .3s;
+
+			svg, img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		[role="navigation"] {
+			position: relative;
+			z-index: 1;
+
+			.menu {
+				position: fixed;
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+
+				opacity: 0;
+				visibility: hidden;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				overflow: hidden;
+
+				transition: visibility 0s .5s, opacity .5s 0s, z-index 0s .5s;
+				background: linear-gradient(45deg, darken($dkGrey, 25%), $dkGrey);
+				background-color: #fff;
+				background-size: cover;
+				margin: 0;
+				padding: 30px 0 120px;
+				overflow-y: auto;
+				z-index: -1;
+
+				.menu-item {
+					position: relative;
+					display: block;
+
+					&.current-menu-item,
+					&.current-menu-ancestor,
+					&.current-menu-parent {
+						>a {
+							
+						}
+					}
+
+					>a {
+						
+					}
+
+					a {
+						display: block;
+						padding: 10px 10px;
+						color: #fff;
+						font-weight: 600;
+						font-size: .875em;
+					}
+
+					.sub-menu {
+						position: relative;
+						display: block;
+						top: auto;
+						left: auto;
+						margin: 0;
+						padding: 0;
+						background-color: #f4f4f4;
+						z-index: 9999;
+
+						.menu-item {
+							a {
+								display: block;
+								white-space: nowrap;
+								color: $fontColor;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.the-search {
+			position: relative;
+			z-index: 10;
+		}
+	}
+}
+
+@media all and (min-width: $smlWidth) {
+	html.no-touch {
+		.menu-toggle {
+			display: none;
+		}
+
+		body {
+			&.admin-bar {
+				[role="banner"] {
+					top: 32px;
+				}
+			}
+		}
+
+		[role="banner"] {
+			position: sticky;
+			top: 0;
+			left: 0;
+			width: 100%;
+			@include hardware;
+
+			.cw-nav-cont {
+				[role="navigation"] {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-end;
+
+					.menu {
+						position: relative;
+						width: auto;
+						height: auto;
+						left: auto;
+						
+						flex-direction: row;
+						align-items: center;
+						justify-content: flex-end;
+						flex-wrap: wrap;
+
+						background-color: transparent;
+						margin: 0;
+						top: auto;
+						padding: 0;
+						visibility: visible;
+						opacity: 1;
+						z-index: 1;
+						background: none;
+						overflow: visible;
+						transform: translateY(0);
+
+						&.open {
+							width: auto;
+						}
+
+						.menu-item {
+
+
+							&:hover {
+								>a {
+									background-color: $tan;
+								}
+
+								 >.sub-menu {
+									visibility: visible;
+									opacity: 1;
+									transition: .5s;
+								}
+							}
+
+							&.current-menu-item,
+							&.current-menu-ancestor,
+							&.current-menu-parent {
+								>a {
+									background-color: #bd8c7d;
+								}
+							}
+
+							>a {
+								
+							}
+
+							.sub-menu {
+								position: absolute;
+								visibility: hidden;
+								opacity: 0;
+								top: 100%;
+								left: 0;
+								margin: 0;
+								padding: 0;
+								transition: .5s;
+
+								.menu-item {
+									a {
+										
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// @media all and (min-width: $medWidth) {
+
+// }

@@ -1,0 +1,17 @@
+@use "globals" as *;
+
+.page-header {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 30px;
+}
+
+// @media all and (min-width: $smlWidth) {
+//     html.no-touch {
+//         .page-header {
+
+//         }
+//     }
+// }

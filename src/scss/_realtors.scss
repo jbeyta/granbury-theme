@@ -1,0 +1,126 @@
+@use "globals" as *;
+
+#realtor-dir {
+    margin-right: 15px;
+    margin-bottom: 30px;
+
+    .fiters {
+        position: sticky;
+        top: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+
+        .filter-mother {
+            margin-right: 15px;
+        }
+    }
+
+    .offices {
+        .office {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .office-info {
+                .office-name {
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                }
+
+                .address {
+                    margin-bottom: 15px;
+
+                    .line-1, .line-2, .line-3 {
+                        display: block;
+                    }
+                }
+
+                .social-links {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-top: 15px;
+
+                    .social-link {
+                        svg {
+                            display: block;
+                            width: 16px;
+                        }
+                    }
+                }
+            }
+
+            .realtors {
+                .realtor {
+                    .name-title {
+                        margin-bottom: 15px;
+                    }
+
+                    .img-mother {
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: $smlWidth) {
+    #realtor-dir {
+        margin-top: 45px;
+        margin-bottom: 60px;
+
+        .fiters {
+            margin-bottom: 45px;
+        }
+
+        .offices {
+            .office {
+                display: grid;
+                grid-template-columns: 33.333% 66.666%;
+
+                .office-info {
+                    padding-right: 30px;
+                }
+
+                .realtors {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 30px;
+
+                    .realtor {
+                        padding: 15px;
+                        border: solid 1px #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: $medWidth) {
+    #realtor-dir {
+        .offices {
+            .office {
+                .realtors {
+                    .realtor {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

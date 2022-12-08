@@ -1,0 +1,38 @@
+.cw-hours {
+	max-width: 40em;
+	padding: 0;
+	overflow-x: hidden;
+	list-style: none;
+
+	li {
+		&:before {
+			float: left;
+			width: 0;
+			white-space: nowrap;
+			content:
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . ";
+		}
+
+		.day-name {
+			padding-right: 0.33em;
+			background: white;
+		}
+
+		.open-close {
+			float: right;
+			padding-left: 0.33em;
+			background: white;
+		}
+	}
+}
+
+// @media all and (min-width: $smlWidth) {
+
+// }
+
+// @media all and (min-width: $medWidth) {
+
+// }

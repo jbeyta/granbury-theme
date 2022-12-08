@@ -1,0 +1,26 @@
+$columns: 12;
+
+@for $c from 2 through $columns {
+	.cw-columns-#{$c} {
+		-moz-column-count: $c;
+		-webkit-column-count: $c;
+		column-count: $c;
+		-moz-column-gap: 15px;
+		-webkit-column-gap: 15px;
+		column-gap: 15px;
+
+		* {
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+		}
+	}
+}
+
+.divider-left {
+	box-shadow: -1px, 0, 0, 0, #333;
+}
+
+.divider-right {
+	box-shadow: 1px, 0, 0, 0, #333;
+}

@@ -1,0 +1,65 @@
+@use "globals" as *;
+
+// footer
+[role="contentinfo"] {
+	background-color: $dkGrey;
+	padding: 30px 0;
+
+	.copy {
+		text-align: center;
+		color: #fff;
+
+		* {
+			color: #fff;
+		}
+	}
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 15px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 99999;
+	width: 36px;
+	height: 36px;
+	background: rgba(#fff, .333);
+	border-radius: 36px;
+	cursor: pointer;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: .3s;
+
+	@include hardware;
+
+	&.showit {
+		visibility: visible;
+		opacity: 1;
+		transition: .3s;
+	}
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 30px;
+		height: auto;
+		display: block;
+	}
+}
+
+@media all and (min-width: $smlWidth) {
+	html.no-touch {
+		.back-to-top {
+			left: auto;
+			right: 15px;
+			transform: translate(0, 0);
+		}
+	}
+}
+
+// @media all and (min-width: $medWidth) {
+
+// }

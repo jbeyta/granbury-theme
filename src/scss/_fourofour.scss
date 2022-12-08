@@ -1,0 +1,14 @@
+.content-not-found {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 75vh;
+	border: dashed 3px #ccc;
+	border-radius: 15px;
+
+	* {
+		text-align: center;
+	}
+}

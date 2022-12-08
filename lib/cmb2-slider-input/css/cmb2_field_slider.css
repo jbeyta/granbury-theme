@@ -1,0 +1,11 @@
+.own-slider-field-value-display {
+	float:right;
+	font-weight: 400;
+	font-size: 12px;
+	color: #888;
+	padding-top: .5em;
+}
+
+.cmb-type-own-slider .cmb-td {
+	width: 50%;
+}

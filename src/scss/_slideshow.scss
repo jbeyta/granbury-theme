@@ -1,0 +1,189 @@
+@use "globals" as *;
+
+@keyframes loading {
+	0% {
+		transform: translateX(-200%);
+	}
+
+	100% {
+		transform: translateX(200%);
+	}
+}
+
+.slick-arrow {
+	position: absolute;
+	display: block;
+    top: 50%;
+    z-index: 9999;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    &:before {
+        display: none;
+    }
+    
+    &.slick-prev {
+        left: 0;
+        transform: translate(5px, -50%);
+		background-image: url(../../src/img/left-arrow.png);
+
+		&:hover, &:focus {
+			background-image: url(../../src/img/left-arrow.png);
+			background-color: transparent;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+    }
+    
+    &.slick-next {
+        right: 0;
+        transform: translate(-5px, -50%);
+		background-image: url(../../src/img/right-arrow.png);
+
+		&:hover, &:focus {
+			background-image: url(../../src/img/right-arrow.png);
+			background-color: transparent;
+			background-position: center center;
+			background-repeat: no-repeat;
+    		background-size: contain;
+		}
+    }
+}
+
+.cw-slideshow {
+	position: relative;
+	z-index: 2;
+	height: 60vh;
+
+	.loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+		overflow: hidden;
+
+		&:before,
+		&:after {
+			@include beforeafter;
+			top: 0;
+			left: 0;
+			width: 50%;
+			height: 100%;
+
+		}
+
+		&:before {
+			background-color: #ccc;
+			box-shadow: -10px 0 0 0 rgba(#ccc, .5);
+			animation-name: loading;
+			animation-duration: 1.5s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: normal;
+			@include hardware;
+		}
+
+		&:after {
+			background-color: #989898;
+			box-shadow: -10px 0 0 0 rgba(#989898, .5);
+			animation-name: loading;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: normal;
+			@include hardware;
+		}
+	}
+
+	.slick-slide {
+		position: relative;
+		text-align: left;
+		overflow: hidden;
+		height: 60vh;
+
+		.image-mother {
+			width: 100%;
+			height: 100%;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.slide {
+			height: 60vh;
+		}
+
+		.slide-words {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.inner {
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+			}
+
+			.slide-title {
+				text-align: center;
+				color: #fff;
+				opacity: 0;
+				transform: translateX(30px);
+				transition: .3s;
+			}
+
+			.slide-caption {
+				text-align: center;
+				color: #fff;
+				opacity: 0;
+				transform: translateX(30px);
+				transition: .3s;
+			}
+
+			.slide-link {
+				opacity: 0;
+				transform: translateX(30px);
+				transition: .3s;
+			}
+		}
+
+		&.slick-active {
+			.slide-words {
+				.slide-title {
+					opacity: 1;
+					transform: translateX(0);
+					transition: .3s .3s;
+				}
+
+				.slide-caption {
+					opacity: 1;
+					transform: translateX(0);
+					transition: .3s .6s;
+				}
+
+				.slide-link {
+					opacity: 1;
+					transform: translateX(0);
+					transition: .3s .9s;
+				}
+			}
+		}
+	}
+}
+
+// @media all and (min-width: $smlWidth) {
+// }

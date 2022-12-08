@@ -1,0 +1,188 @@
+@use "globals" as *;
+
+// ::-webkit-input-placeholder {
+//    color: #fff;
+// }
+
+// :-moz-placeholder { /* Firefox 18- */
+//    color: #fff;
+// }
+
+// ::-moz-placeholder {  /* Firefox 19+ */
+//    color: #fff;
+// }
+
+// :-ms-input-placeholder {  
+//    color: #fff;
+// }
+
+$inputBg: #fff;
+
+// type="button"
+// type="checkbox"
+// type="color"
+// type="date"
+// type="datetime-local"
+// type="email"
+// type="file"
+// type="hidden"
+// type="image"
+// type="month"
+// type="number"
+// type="password"
+// type="radio"
+// type="range"
+// type="reset"
+// type="search"
+// type="submit"
+// type="tel"
+// type="text"
+// type="time"
+// type="url"
+// type="week"
+
+
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+input[type="password"],
+input[type="tel"],
+input[type="button"],
+button,
+select,
+textarea {
+	border: 0;
+	outline: none!important;
+	-webkit-appearance: none;
+
+	.gform_wrapper & {
+		border: 0!important;
+	}
+}
+
+input[type="submit"],
+input[type="button"],
+button:not(.slick-arrow):not(.tribe-common-h3):not(.tribe-common-h--alt):not(.tribe-events-c-top-bar__datepicker-button):not(.tribe-common-c-btn-icon):not(.tribe-common-c-btn-icon--caret-right):not(.tribe-events-c-top-bar__nav-link):not(.tribe-events-c-top-bar__nav-link--next):not(.tribe-events-c-nav__next):not(.tribe-common-b2):not(.tribe-common-b1--min-medium):not(.tribe-common-c-btn):not(.tribe-events-c-search__button):not(.tribe-events-c-events-bar__search-button):not(.tribe-events-c-view-selector__button):not(.tribe-events-calendar-month__day-cell):not(.tribe-events-calendar-month__day-cell--mobile):not(.tribe-tickets__tickets-item-quantity-remove):not(.tribe-tickets__tickets-item-quantity-add):not(.tribe-dialog__close-button):not(.tribe-modal__close-button):not(.tribe-tickets__tickets-item-remove):not(.tribe-tickets__rsvp-ar-quantity-input-number):not(.tribe-tickets__rsvp-ar-quantity-input-number--plus):not(.tribe-tickets__rsvp-ar-guest-list-item-button):not([role="tab"]):not(.tribe-events-c-subscribe-dropdown__button-text),
+.button {
+	display: inline-block;
+	background-color: $linkColor;
+	color: #fff;
+	padding: 10px 20px;
+	transition: .25s;
+	cursor: pointer;
+
+	&.white {
+		background-color: #fff;
+		color: $linkColor;
+	}
+
+	&.small {
+		padding: 5px 10px;
+		font-size: .875em;
+	}
+
+	&:hover {
+		background-color: $linkColor;
+		color: #fff;
+		transition: .25s;
+	}
+}
+
+input[type="file"] {
+
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+input[type="password"],
+input[type="tel"],
+input[type="button"],
+textarea,
+select {
+	box-shadow: 0 0 0 1px #333 inset;
+	transition: .25s;
+	padding: 10px;
+	background-color: $inputBg;
+	line-height: 1.3;
+
+	&:hover, &:focus {
+		box-shadow: 0 0 0 4px #333 inset;
+		transition: .25s;
+	}
+
+	.gform_wrapper & {
+		padding: 10px!important;
+		line-height: 1.3!important;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"], {
+
+}
+
+textarea {
+
+}
+
+select {
+	border-radius: 0;
+	background-image: url(../../src/img/select-down.png);
+	background-position: right 10px center;
+	background-size: 10px 5px;
+	background-repeat: no-repeat;
+	background-color: $inputBg;
+	padding-right: 30px;
+
+	&[multiple="multiple"] {
+		background: none;
+		background-color: $inputBg;
+	}
+
+	&.ui-datepicker-month,
+	&.ui-datepicker-year {
+		background: none;
+		box-shadow: 0 0 0 0 $fontColor;
+
+		&:hover, &:focus {
+			box-shadow: 0 0 0 0 $fontColor;
+		}	
+	}
+}
+
+// @media all and (min-width: $smlWidth) {
+
+// }
+
+// @media all and (min-width: $medWidth) {
+
+// }

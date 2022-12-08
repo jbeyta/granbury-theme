@@ -1,0 +1,139 @@
+@use "globals" as *;
+
+.alert-cont {
+	position: relative;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	background: linear-gradient(red, darken(red, 10%));
+	z-index: 9999;
+	transition: .5s;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+
+	&.showing {
+		visibility: visible;
+	}
+
+	.alert {
+		position: relative;
+		padding: 15px;
+		margin-top: 0;
+		transition: .5s;
+
+		.alert-title {
+			color: #fff;
+		}
+
+		.alert-text {
+			color: #fff;
+		}
+
+		.alert-close {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			cursor: pointer;
+			display: inline-block;
+
+			i {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.alert-open {
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 5px;
+	z-index: 99999;
+	transform: scale(.5);
+	transition: .5s;
+	cursor: pointer;
+	background-color: red;
+	width: 50px;
+	height: 25px;
+	text-align: center;
+	border-radius: 0 0 25px 25px;
+	opacity: 0;
+	visibility: hidden;
+	animation-name: alert;
+	animation-duration: 4s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+
+	i {
+		color: #fff;
+	}
+
+	&.showing {
+		transform: scale(1);
+		transition: .5s;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes alert {
+	0% {
+		transform: translateY(0);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 1), 0 0 0 0 rgba(212, 47, 47, 1);
+	}
+	90% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 1), 0 0 0 0 rgba(212, 47, 47, 1);
+		transform: translateY(0);
+		
+	}
+	95% {
+		transform: translateY(-5px);
+	}
+	97.5% {
+		transform: translateY(0);
+	}
+	98.75% {
+		transform: translateY(-2.5px);
+	}
+	100% {
+		transform: translateY(0);
+		box-shadow: 0 0 0 25px rgba(255, 255, 255, 0), 0 0 0 50px rgba(212, 47, 47, 0);
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	90% {
+		transform: translateY(0);
+	}
+	95% {
+		transform: translateY(-5px);
+	}
+	97.5% {
+		transform: translateY(0);
+	}
+	98.75% {
+		transform: translateY(-2.5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@media all and (min-width: $smlWidth) {
+	.alert-open {
+		margin-top: 5px;
+		left: 5px;
+		width: 25px;
+		border-radius: 25px 25px 25px 25px;
+		right: auto;
+		transform: scale(0) translateX(0);
+	}
+}
+
+// @media all and (min-width: $medWidth) {
+
+// }

@@ -1,0 +1,41 @@
+@use "globals" as *;
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.gallery-item {
+		padding: 15px;
+	}
+
+	$g_columns: 9;
+	@for $i from 1 through $g_columns {
+		&.gallery-columns-#{$i} {
+			.gallery-item {
+				float: none;
+				width: 100%!important;
+			}
+		}
+	}
+}
+
+@media all and (min-width: $smlWidth) {
+	.gallery {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		$g_columns: 9;
+		@for $i from 1 through $g_columns {
+			$w: $i/$g_columns*100;
+			
+			&.gallery-columns-#{$i} {
+				.gallery-item {
+					float: none;
+					width: $w+%!important;
+				}
+			}
+		}
+	}
+}

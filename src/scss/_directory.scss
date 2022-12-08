@@ -1,0 +1,262 @@
+@use "globals" as *;
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+#realtor-dir {
+    .controls {
+        position: relative;
+        margin-bottom: 20px;
+
+        .more-filters {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .input-mother {
+                margin-right: 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .real-search {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], button {
+            margin-bottom: 10px;
+        }
+
+        select {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .jump-to-office {
+            margin-bottom: 15px;
+        }
+
+        .button {
+            text-decoration: none;
+        }
+
+        .loading {
+            position: absolute;
+            left: 50%;
+            width: 50%;
+            transform: translate(-50%, 15px);
+            display: flex;
+            flex-direction: row;
+
+            .line {
+                height: 2px;
+                flex: 1;
+                background-color: $linkColor;
+                margin: 0 10px;
+                animation-name: fade;
+                animation-duration: .5s;
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+                &:nth-child(1) {
+                    animation-delay: .125s;
+                }
+                &:nth-child(2) {
+                    animation-delay: .25s;
+                }
+                &:nth-child(3) {
+                    animation-delay: .375s;
+                }
+                &:nth-child(4) {
+                    animation-delay: .5s;
+                }
+                &:nth-child(5) {
+                    animation-delay: .625s;
+                }
+                &:nth-child(6) {
+                    animation-delay: .75s;
+                }
+                &:nth-child(7) {
+                    animation-delay: .875s;
+                }
+                &:nth-child(8) {
+                    animation-delay: 2s;
+                }
+            }
+        }
+    }
+}
+
+.realtor-listings {
+    .listing {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px 0;
+
+            .icon-mother {
+                margin-right: 10px;
+                margin-bottom: 0;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    display: block;
+
+                    svg {
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        .realtors {
+            .realtor {
+                margin-bottom: 20px;
+                padding: 10px;
+                box-shadow: 0 0 0 1px #ccc;
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                .title {
+                    margin-bottom: 10px;
+                }
+
+                .bio-window {
+                    position: relative;
+
+                    .bio-toggle {
+                        margin-top: 15px;
+
+                        span {
+                            color: $linkColor;
+                            cursor: pointer;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .bio-mother {
+                        position: relative;
+                        margin-top: 15px;
+
+                        .inner {
+                            padding: 15px;
+                            border: solid 1px #ccc;
+                            border-radius: 5px;
+
+                            .image {
+                                margin-bottom: 15px;
+
+                                img {
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                            }
+
+                            .bio {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.affiliate {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+
+    .aff-title {
+        margin-bottom: 15px;
+    }
+
+    .img-mother {
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 200px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .desc {
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (min-width: $smlWidth) {
+    .realtor-listings {
+        .controls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .real-search {
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+
+            .jump-to-office {
+                margin-bottom: 0;
+                margin-right: 30px;
+            }
+        }
+
+        .listing {
+            .realtors {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+
+                .realtor {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+// @media all and (min-width: $medWidth) {
+//     .realtor-listings {
+//         .listing {
+//             .realtors {
+//                 grid-template-columns: repeat(3, 1fr);
+//             }
+//         }
+//     }
+// }

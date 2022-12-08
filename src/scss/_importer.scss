@@ -1,0 +1,34 @@
+#importerer {
+    position: relative;
+
+    .loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 30px;
+        border: solid 1px #000;
+        font-size: 1.5em;
+        z-index: 9999;
+    }
+
+    .agents {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        .match {
+            border: solid 1px #ccc;
+            padding: 10px;
+
+            &.done {
+                background-color: #999;
+            }
+
+            button:disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+}

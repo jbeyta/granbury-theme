@@ -1,0 +1,44 @@
+@use "globals" as *;
+
+.pagination {
+	display: flex;
+	flex-direction: row;
+	padding: 20px 0;
+	position: relative;
+	font-size: 11px;
+	line-height: 13px;
+
+	span, a {
+		display: block;
+		margin-right: 5px;
+		width: 30px;
+		height: 30px;
+		border-radius: 30px;
+		text-align: center;
+		text-decoration: none;
+		color: #fff;
+		background: #ccc;
+		line-height: 30px;
+		font-weight: 700;
+
+		&.current {
+			background: #000;
+			color: #fff;
+		}
+	}
+
+	a {
+		&:hover {
+			color: #fff;
+			background: #000;
+		}
+	}
+}
+
+// @media all and (min-width: $smlWidth) {
+
+// }
+
+// @media all and (min-width: $medWidth) {
+
+// }
